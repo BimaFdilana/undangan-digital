@@ -1,0 +1,202 @@
+/* Tema "Pastel Kaligrafi": biru kelabu lembut + putih, nama kaligrafi, gerbang dua panel. */
+
+.t-pastel {
+  --blue: #7f97b8; --blue-d: #4a6288; --blue-dd: #34496c; --sky: #b4c9e2; --mist: #e6ecf4;
+  /* variabel yang dipakai gaya bersama (kartu rekening, ucapan) */
+  --gold: #7f97b8; --gold-soft: #4a6288; --cream: #34496c; --muted: #6f82a3;
+  --serif: 'Libre Baskerville', Georgia, serif; --display: 'Montserrat', sans-serif; --sans: 'Montserrat', system-ui, sans-serif;
+  min-height: 100vh; padding: 0 !important; background: #dfe6ef; color: var(--cream);
+  font-family: var(--sans); font-weight: 300; -webkit-font-smoothing: antialiased;
+}
+.t-pastel *, .t-pastel *::before, .t-pastel *::after { box-sizing: border-box; }
+.t-pastel .stage {
+  height: 100dvh; max-width: 430px; margin: 0 auto; position: relative; background: #fff;
+  overflow: hidden; overflow: clip; box-shadow: 0 0 70px rgba(40, 60, 90, .3);
+}
+.t-pastel .book { background: #fff; }
+.t-pastel .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.t-pastel .book .sheet > section {
+  min-height: 100%; position: relative; display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 48px 26px 64px; overflow: hidden;
+}
+.t-pastel .book .sheet > section > :not(.bg) { position: relative; z-index: 2; }
+.t-pastel p { font-size: 13px; line-height: 1.8; }
+
+/* tombol */
+.t-pastel .btn {
+  display: inline-flex; align-items: center; justify-content: center; padding: 11px 24px; border-radius: 99px;
+  font-family: var(--serif); font-style: italic; font-size: 13px; letter-spacing: .02em; text-transform: none;
+  text-decoration: none; border: 1px solid var(--blue); color: var(--blue); background: transparent; cursor: pointer;
+}
+.t-pastel .btn.solid { background: var(--blue); color: #fff; }
+.t-pastel .btn:disabled { opacity: .55; }
+
+/* musik */
+.t-pastel .music {
+  position: fixed; left: max(16px, calc(50% - 215px + 16px)); right: auto; bottom: 20px; z-index: 50;
+  width: 44px; height: 44px; border-radius: 50%; border: 0; display: grid; place-items: center;
+  background: rgba(228, 226, 218, .92); color: var(--blue); font-size: 18px; box-shadow: 0 2px 10px rgba(40, 60, 90, .25);
+}
+.t-pastel .book-dots button { background: rgba(74, 98, 136, .3); }
+.t-pastel .book-dots button.on { background: var(--blue); }
+.t-pastel .book-hint { color: var(--blue); text-shadow: 0 0 8px #fff, 0 0 3px #fff; }
+.t-pastel .book-hint { bottom: 12px; }
+
+/* ===== sampul ===== */
+.t-pastel .pc-cover { padding: 0 !important; justify-content: flex-start !important; color: #fff; }
+.pc-cover-shade { background: linear-gradient(180deg, rgba(20,30,50,.22) 0, rgba(20,30,50,0) 30%, rgba(20,30,50,0) 56%, rgba(20,30,50,.58) 100%); }
+.pc-top { margin-top: 28px; font-size: 11px; letter-spacing: .42em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 8px rgba(30,45,70,.5); }
+.pc-names { width: 100%; padding: 0 22px; text-align: left; margin-top: 12px; font-family: 'Allura', cursive; color: #fff; text-shadow: 0 2px 16px rgba(40,60,90,.4); }
+.pc-names .n1, .pc-names .n2 { display: block; font-size: 66px; line-height: 1.05; }
+.pc-names .n1 { margin-left: 3%; }
+.pc-names .n2 { text-align: right; margin-right: 2%; }
+.pc-names em { display: block; font-family: var(--serif); font-style: italic; font-size: 14px; margin: 0 0 -6px 9%; }
+.pc-bottom { width: 100%; padding: 0 20px 54px; margin-top: auto; }
+.pc-date { font-family: var(--serif); font-style: italic; font-size: 16px; letter-spacing: .12em; color: #fff; margin-bottom: 12px; text-shadow: 0 1px 8px rgba(30,45,70,.55); }
+.pc-cover .cd { display: flex; justify-content: center; gap: 12px; }
+.pc-cover .cd div { border: 0; background: none; padding: 0; text-align: center; }
+.pc-cover .cd b { display: block; background: #fff; color: var(--blue-d); font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1; padding: 11px 0; min-width: 62px; border-radius: 8px; }
+.pc-cover .cd span { display: block; margin-top: 6px; font-size: 9.5px; letter-spacing: .2em; color: #fff; text-transform: uppercase; text-shadow: 0 1px 6px rgba(30,45,70,.6); }
+
+/* ===== halaman umum ===== */
+.t-pastel .pc-white { background: #fff; }
+.t-pastel .pc-blue { background: var(--sky); }
+.t-pastel .pc-mist { background: var(--mist); }
+.pc-sprig { display: block; margin: 0 auto 4px; }
+.pc-label { font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--blue); font-weight: 400; margin-bottom: 8px; }
+.pc-line { width: 100%; max-width: 340px; height: 1px; background: var(--blue); margin: 0 auto 12px; }
+
+/* cerita */
+.t-pastel .pc-story { justify-content: center; }
+.pc-chapter { margin-bottom: 22px; color: var(--blue-dd); font-family: var(--serif); font-style: italic; }
+.pc-chapter b { display: block; font-size: 14px; }
+.pc-chapter i { display: block; font-size: 12.5px; color: var(--blue); margin: 2px 0 6px; }
+.pc-chapter p { font-size: 12.5px; line-height: 1.75; }
+
+/* mempelai */
+.t-pastel .pc-couple { justify-content: flex-start; padding-bottom: 0 !important; }
+.pc-person { width: 100%; margin-bottom: 16px; }
+.pc-name { font-family: 'Allura', cursive; font-size: 40px; line-height: 1.2; color: var(--blue); margin: 2px 0 8px; }
+.pc-sub { font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--blue-d); }
+.pc-parent { font-family: var(--serif); font-weight: 700; font-size: 13.5px; color: var(--blue-d); line-height: 1.55; }
+.pc-fadephoto { flex: 1; min-height: 140px; width: calc(100% + 52px); margin: 8px -26px 0; position: relative; }
+.pc-fadephoto img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 40%); mask-image: linear-gradient(to bottom, transparent 0, #000 40%);
+}
+
+/* acara */
+.t-pastel .pc-events { justify-content: center; }
+.pc-event { width: 100%; margin-bottom: 8px; }
+.pc-edate { font-family: var(--serif); font-weight: 700; font-size: 15px; color: var(--blue-d); }
+.pc-etime { font-family: var(--serif); font-size: 13px; color: var(--muted); margin: 3px 0 8px; }
+.pc-cal { display: block; font-family: var(--serif); font-weight: 700; font-size: 11.5px; letter-spacing: .06em; color: var(--blue); text-decoration: underline; text-underline-offset: 3px; margin-bottom: 6px; }
+.pc-place { font-family: var(--serif); font-weight: 700; font-size: 14px; color: var(--blue-d); line-height: 1.4; }
+.pc-addr { font-family: var(--serif); font-size: 12px; color: var(--muted); margin-top: 2px; }
+.pc-pill.off { background: #e6ecf4; color: var(--blue-d); font-size: 12px; cursor: default; }
+.pc-pill { display: inline-block; margin-top: 10px; background: var(--blue); color: #fff; font-family: var(--serif); font-style: italic; font-size: 13px; padding: 9px 26px; border-radius: 99px; text-decoration: none; }
+
+/* galeri: satu halaman panjang yang digulir */
+.t-pastel .pc-gallery { justify-content: flex-start; padding: 36px 14px 76px; }
+.pc-masonry { width: 100%; columns: 2; column-gap: 8px; margin-top: 8px; }
+.pc-masonry img { width: 100%; display: block; margin-bottom: 8px; border-radius: 12px; break-inside: avoid; }
+
+/* instagram */
+.t-pastel .pc-ig { padding: 0 !important; justify-content: flex-end; }
+.pc-igbox { margin: 0 22px 74px; background: rgba(230,236,244,.92); border-radius: 6px; padding: 18px 14px; color: var(--blue-d); font-family: var(--serif); }
+.pc-igbox p { font-style: italic; font-size: 13px; margin-bottom: 6px; }
+.pc-igbox b { display: block; font-size: 15px; letter-spacing: .04em; }
+.pc-igbox span { display: block; font-size: 12px; margin-top: 4px; color: var(--blue); }
+
+/* rsvp */
+.t-pastel .pc-rsvp { justify-content: center; }
+.pc-title { font-family: var(--serif); font-size: 22px; letter-spacing: .3em; color: #fff; margin: 6px 0 6px; }
+.pc-lead { font-family: var(--serif); font-style: italic; font-size: 13px; color: #fff; margin-bottom: 16px; }
+.pc-lead.dark { color: var(--blue-d); }
+.pc-card { width: 100%; background: #fff; border-radius: 6px; padding: 20px 16px; text-align: left; color: var(--blue-dd); }
+
+/* formulir (RSVP dan ucapan) */
+.t-pastel .field { text-align: left; margin-bottom: 12px; }
+.t-pastel .field label { display: block; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--blue); margin-bottom: 5px; font-weight: 400; }
+.t-pastel .field > div:not(.rsvp-count), .t-pastel .field input, .t-pastel .field select, .t-pastel .field textarea {
+  width: 100%; border: 1px solid #c6d3e6; border-radius: 8px; padding: 11px 12px; font: inherit; font-size: 13.5px;
+  color: var(--blue-dd); background: #f6f9fd; outline: none;
+}
+.t-pastel .field textarea { min-height: 76px; height: 76px; resize: none; }
+.t-pastel .field input:focus, .t-pastel .field select:focus, .t-pastel .field textarea:focus { border-color: var(--blue); }
+.t-pastel .field div.rsvp-count { border: 0; padding: 0; background: none; text-align: right; font-size: 11px; color: var(--muted); margin-top: 3px; }
+.t-pastel .choice { display: flex; gap: 10px; margin-bottom: 12px; }
+.t-pastel .choice .btn { flex: 1; }
+.t-pastel .rsvp-msg { text-align: center; font-size: 12.5px; color: var(--blue-d); margin-top: 8px; }
+.t-pastel .pc-card .btn.solid { width: 100%; }
+
+/* wedding gift */
+.t-pastel .pc-gift { justify-content: center; }
+.t-pastel .pc-gift .pc-lead { max-width: 340px; font-size: 12.5px; margin-bottom: 14px; }
+.t-pastel .book .gift-list { width: 100%; }
+.t-pastel .book .bank { width: 100%; border-color: #c6d3e6; background: #f3f7fc; border-radius: 12px; }
+.t-pastel .book .bank-name { font-family: var(--sans); color: var(--blue); }
+.t-pastel .book .bank-no { color: var(--blue-dd); font-size: 22px; letter-spacing: .02em; white-space: nowrap; }
+.t-pastel .book .kado-name { color: var(--blue-dd); }
+.t-pastel .book .kado-addr { color: var(--muted); }
+
+/* ayat */
+.t-pastel .pc-ayat { justify-content: center; }
+.pc-script { font-family: 'Allura', cursive; font-size: 60px; line-height: 1.05; color: var(--blue); }
+.pc-script.s2 { margin-left: 70px; margin-bottom: 22px; }
+.pc-script.w { color: #fff; }
+.pc-arab { font-family: serif; font-size: 20px; line-height: 2; color: var(--blue); margin: 10px 0 4px; }
+.pc-ayat blockquote { font-family: var(--serif); font-style: italic; font-size: 13.5px; line-height: 1.85; color: var(--blue-d); }
+.pc-ayat cite { display: block; margin-top: 12px; font-style: normal; font-size: 11px; letter-spacing: .26em; color: var(--blue); font-family: var(--sans); }
+
+/* ucapan */
+.t-pastel .pc-wishes { height: 100%; justify-content: flex-start; padding-top: 36px; padding-bottom: 54px; }
+.t-pastel .pc-wishes form { width: 100%; flex: none; }
+.t-pastel .pc-wishes .wcount { flex: none; margin: 14px 0 8px; color: var(--blue-d); }
+.t-pastel .pc-wishes .wbox { width: 100%; flex: 1 1 0; min-height: 120px; max-height: none; }
+.t-pastel .book .wcard { background: #f3f7fc; border-color: #d5e1f1; }
+.t-pastel .book .wname { color: var(--blue-d); }
+.t-pastel .book .wtext { color: var(--blue-dd); }
+.t-pastel .book .wtime, .t-pastel .book .wempty { color: var(--muted); }
+.t-pastel .book .wbox { scrollbar-color: rgba(127,151,184,.6) transparent; }
+
+/* penutup */
+.t-pastel .pc-end { padding: 0 !important; justify-content: flex-end; }
+.pc-end-shade { background: linear-gradient(180deg, rgba(40,60,90,0) 22%, rgba(40,60,90,.55) 58%, rgba(40,60,90,.88) 100%); }
+.pc-endtext { padding: 0 28px 64px; color: #fff; }
+.pc-endtext p { color: #fff; margin-bottom: 8px; }
+
+/* ===== gerbang: dua panel bergelombang ===== */
+.t-pastel .gate.pg {
+  position: fixed; inset: 0; margin: auto; max-width: 430px; z-index: 100; overflow: hidden; background: transparent;
+  transition: opacity .6s ease .1s, visibility 0s .7s;
+}
+.t-pastel .gate.pg.leave { opacity: 0; visibility: hidden; pointer-events: none; }
+.pg-panel { position: absolute; top: 0; bottom: 0; width: 66%; z-index: 2; filter: drop-shadow(0 0 14px rgba(60, 80, 110, .35)); transition: transform 1.7s cubic-bezier(.65, 0, .25, 1); }
+.pg-panel.l { left: 0; }
+.pg-panel.r { right: 0; }
+.pg-panel svg { width: 100%; height: 100%; display: block; }
+.pg-panel.r svg { transform: scaleX(-1); }
+.pg-fill { fill: #e6e7e4; }
+.pg-orn { stroke: #fff; stroke-width: 1.6; opacity: .85; }
+.t-pastel .gate.pg.open .pg-panel.l { transform: translateX(-104%); }
+.t-pastel .gate.pg.open .pg-panel.r { transform: translateX(104%); }
+.pg-mid { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity .5s; }
+.t-pastel .gate.pg.open .pg-mid { opacity: 0; pointer-events: none; }
+.pg-card {
+  position: relative; width: min(86%, 340px); padding: 28px 20px 36px; text-align: center; background: var(--blue); color: #fff;
+  clip-path: polygon(8% 0, 92% 0, 100% 28%, 100% 72%, 92% 100%, 8% 100%, 0 72%, 0 28%);
+}
+.pg-card::after { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(255, 255, 255, .55); clip-path: polygon(8% 0, 92% 0, 100% 28%, 100% 72%, 92% 100%, 8% 100%, 0 72%, 0 28%); pointer-events: none; }
+.pg-card small { display: block; font-family: var(--serif); font-style: italic; font-size: 15px; margin-bottom: 8px; }
+.pg-card b { font-weight: 300; font-size: 20px; letter-spacing: .06em; text-transform: uppercase; overflow-wrap: anywhere; }
+.pg-open {
+  margin-top: -20px; position: relative; z-index: 2; background: #fff; color: var(--blue-dd); font-family: var(--serif);
+  font-style: italic; font-size: 16px; padding: 12px 32px; border: 1px solid var(--blue); border-radius: 99px; cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-panel { transition-duration: .01s; }
+}
+
+.t-pastel .book .bank.soon, .t-pastel .book .kado .kado-addr:only-child { margin: 4px 0 0; }

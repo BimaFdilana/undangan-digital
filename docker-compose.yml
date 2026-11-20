@@ -1,0 +1,22 @@
+# Database lokal. Port 5433 agar tidak bentrok dengan Postgres DBngin (5432).
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: undangan-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: undangan
+      POSTGRES_PASSWORD: undangan_dev
+      POSTGRES_DB: undangan
+    ports:
+      - "5433:5432"
+    volumes:
+      - undangan_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U undangan -d undangan"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  undangan_pgdata:
